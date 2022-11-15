@@ -42,7 +42,7 @@ export default class Calculator extends Component {
 
       const values = [ ...this.state.values]
       try{
-        values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`).toFixed(6)
+        values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
 
       }catch(e){
         values[0] = this.state.values[0]
@@ -77,7 +77,7 @@ export default class Calculator extends Component {
       const i = this.state.current
       const newValue = parseFloat(displayValue)
       const values = [ ...this.state.values ]
-      values[i] = newValue 
+      values[i] = newValue
       this.setState({ values })
     }
   }
@@ -86,7 +86,7 @@ export default class Calculator extends Component {
     return (
       <div className="Calculator">
         {/* renderizando o display e os buttons e enviando valor para display */}
-        <Display value={this.state.displayValue}/>
+        <Display value={this.state.displayValue} />
         {/* renderizando button com evento click e style css */}
         {/* a função (addDigit) vai capturar o valor do button */}
         {/* a função (clearMemory) vai limpar os valores do display */}
